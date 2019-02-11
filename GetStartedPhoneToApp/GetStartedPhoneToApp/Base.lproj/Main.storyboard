@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f2t-Pt-BKA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="HwS-fP-JDs">
+            <objects>
+                <viewController id="f2t-Pt-BKA" customClass="MainViewController" customModule="GetStartedInAppVoice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MBk-sh-vwi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ptv-7O-LcJ">
+                                <rect key="frame" x="67.5" y="44" width="240" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="LEO-Ok-75k"/>
+                                    <constraint firstAttribute="height" constant="160" id="bWF-po-n7M"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24i-1k-Eyw">
+                                <rect key="frame" x="24" y="333.5" width="327" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="TfQ-AY-ttJ">
+                                <rect key="frame" x="177.5" y="301.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deA-cO-yCh">
+                                <rect key="frame" x="24" y="583" width="327" height="44"/>
+                                <color key="backgroundColor" red="0.2091954714" green="0.64987062039999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PRT-wb-9Rq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="End Call">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="endCall:" destination="f2t-Pt-BKA" eventType="touchUpInside" id="Fh6-Kz-9gd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.074509803920000006" green="0.22352941179999999" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="24i-1k-Eyw" firstAttribute="top" secondItem="TfQ-AY-ttJ" secondAttribute="bottom" constant="12" id="8lz-tb-6Tn"/>
+                            <constraint firstItem="24i-1k-Eyw" firstAttribute="centerY" secondItem="vMK-gm-lcW" secondAttribute="centerY" id="BGn-tZ-NHp"/>
+                            <constraint firstItem="vMK-gm-lcW" firstAttribute="trailing" secondItem="24i-1k-Eyw" secondAttribute="trailing" constant="24" id="COi-sm-IEI"/>
+                            <constraint firstItem="vMK-gm-lcW" firstAttribute="bottom" secondItem="deA-cO-yCh" secondAttribute="bottom" constant="40" id="GH7-i3-NmF"/>
+                            <constraint firstItem="Ptv-7O-LcJ" firstAttribute="centerX" secondItem="vMK-gm-lcW" secondAttribute="centerX" id="JX2-cW-pUj"/>
+                            <constraint firstItem="Ptv-7O-LcJ" firstAttribute="top" secondItem="vMK-gm-lcW" secondAttribute="top" constant="24" id="ZoP-kj-xEq"/>
+                            <constraint firstItem="deA-cO-yCh" firstAttribute="leading" secondItem="vMK-gm-lcW" secondAttribute="leading" constant="24" id="bs4-QY-lQu"/>
+                            <constraint firstItem="vMK-gm-lcW" firstAttribute="trailing" secondItem="deA-cO-yCh" secondAttribute="trailing" constant="24" id="fU6-Ao-htT"/>
+                            <constraint firstItem="TfQ-AY-ttJ" firstAttribute="centerX" secondItem="vMK-gm-lcW" secondAttribute="centerX" id="odd-QZ-0eo"/>
+                            <constraint firstItem="24i-1k-Eyw" firstAttribute="leading" secondItem="vMK-gm-lcW" secondAttribute="leading" constant="24" id="vhL-s9-6G5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vMK-gm-lcW"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="TfQ-AY-ttJ" id="TW5-jD-vZJ"/>
+                        <outlet property="endCallButton" destination="deA-cO-yCh" id="L9M-hf-vTx"/>
+                        <outlet property="statusLabel" destination="24i-1k-Eyw" id="RU9-OL-3Ka"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6E4-DT-AaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="418" y="337"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo" width="659" height="221"/>
+    </resources>
+</document>
