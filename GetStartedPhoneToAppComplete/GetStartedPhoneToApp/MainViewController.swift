@@ -71,10 +71,13 @@ extension MainViewController: NXMClientDelegate {
     }
     
     func displayIncomingCallAlert(call: NXMCall) {
-        let names: [String] = call.otherCallMembers.compactMap({ participant -> String? in
-            return (participant as? NXMCallMember)?.user.name
-        })
-        let alert = UIAlertController(title: "Incoming call from", message: names.joined(separator: ", "), preferredStyle: .alert)
+        var from = "Unknown"
+        if let otherParty = call.otherCallMembers.firstObject as? NXMCallMember {
+            print("Type: \(String(describing: otherParty.channel?.from.type))")
+            print("Number: \(String(describing: otherParty.channel?.from.data))")
+            from = otherParty.channel?.from.data ?? "Unknown"
+        }
+        let alert = UIAlertController(title: "Incoming call from", message: from, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Answer", style: .default, handler: { _ in
             self.answer(call: call)
         }))

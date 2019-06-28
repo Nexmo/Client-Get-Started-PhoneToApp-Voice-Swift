@@ -39,24 +39,21 @@ extension MainViewController {
         }
         
         guard let call = call else {
-            switch callStatus {
-            case .unknown:
-                return .loggedIn
-            case .inProgress:
-                return .loggedIn
-            case .error:
-                return .callError
-            case .rejected:
-                return .callRejected
-            case .completed:
-                return .callEnded
-            }
+            return .loggedIn
         }
-        switch call.status  {
-        case .disconnected:
-            return .callEnded
-        case .connected:
+        switch call.myCallMember.status {
+        case .dialling:
+            return .connecting
+        case .calling:
+            return .connecting
+        case .started:
+            return .connecting
+        case .answered:
             return .inCall
+        case .cancelled:
+            return .callRejected
+        case .completed:
+            return .callEnded
         }
     }
     

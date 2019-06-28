@@ -44,16 +44,6 @@ extension NXMConnectionStatusReason {
     }
 }
 
-extension NXMCallStatus {
-    func description() -> String {
-        switch self {
-        case .connected:
-            return "Connected"
-        case .disconnected:
-            return "Disconnected"
-        }
-    }
-}
 
 extension NXMCallMemberStatus {
     func description() -> String {
